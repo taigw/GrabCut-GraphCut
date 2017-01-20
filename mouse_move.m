@@ -14,15 +14,13 @@ interaction_scrb = get(glb_handles.radiobutton_scrb, 'value');
 if(interaction_scrb && mouse_state)
     % should draw scribbles on roi
     mouse_botton = get(gcbf, 'SelectionType');
-    if(strcmp(mouse_botton,'normal')) %left
+    if(strcmp(mouse_botton,'normal')) % left mouse bottom
         hold on;
-    %     plot(temp(1,1),temp(1,2),'.r','MarkerSize',10);
         p=plot([last_point(1), temp(1)],[last_point(2), temp(2)], 'r','MarkerSize',10);
         p(1).LineWidth = 2;
         Seeds = draw_line_on_img(Seeds, last_point, temp, 127);
-    elseif(strcmp(mouse_botton,'alt')) %right
+    elseif(strcmp(mouse_botton,'alt')) % right mouse bottom
         hold on;
-    %     plot(temp(1,1),temp(1,2),'.b','MarkerSize',10);
         p=plot([last_point(1), temp(1)],[last_point(2), temp(2)], 'b','MarkerSize',10);
         p(1).LineWidth = 2;
         Seeds = draw_line_on_img(Seeds, last_point, temp, 255);

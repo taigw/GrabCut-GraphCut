@@ -66,7 +66,12 @@ set(gcf,'WindowButtonDownFcn',{@mouse_down});
 set(gcf,'WindowButtonMotionFcn',{@mouse_move});
 set(gcf,'WindowButtonUpFcn',{@mouse_up});
 global glb_handles;
+global mouse_state;
+global bounding_box_state;
 glb_handles = handles;
+addpath('./Algorithms');
+mouse_state = 0;
+bounding_box_state= 0;
 
 % --- Outputs from this function are returned to the command line.
 function varargout = seg_interface_OutputFcn(hObject, eventdata, handles) 
@@ -98,9 +103,8 @@ global Seeds;
 global Seg;
 global bb_x0 bb_x1 bb_y0 bb_y1;
 global bounding_box_state;
-addpath('./Algorithms');
-current_method = get(handles.popupmenu1,'Value');
 
+current_method = get(handles.popupmenu1,'Value');
 % graph cut
 if(current_method == 1) 
     if(sum(sum(Seeds==127))==0 || sum(sum(Seeds==255))==0)
