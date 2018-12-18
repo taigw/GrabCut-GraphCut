@@ -24,13 +24,13 @@ classdef GMMGraphCutAlgorithm %< CoreBaseClass
            
            obj.lambda = 10.0;
            obj.sigma = 40.0;
-           obj.k = 5;
+           obj.k = 3;
 
            Mreshape = reshape(seeds,[H*W,1]);
            FData = Ireshape(Mreshape==127,:);
            BData = Ireshape(Mreshape==255,:);
-           obj.FgGMM = fitgmdist(FData,obj.k);
-           obj.BgGMM = fitgmdist(BData,obj.k);
+           obj.FgGMM = fitgmdist(FData,obj.k, 'RegularizationValue',0.1);
+           obj.BgGMM = fitgmdist(BData,obj.k, 'RegularizationValue',0.1);
            
            Fprob = obj.FgGMM.pdf(Ireshape);
            Bprob = obj.BgGMM.pdf(Ireshape);

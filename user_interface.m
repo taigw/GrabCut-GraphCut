@@ -22,7 +22,7 @@ function varargout = user_interface(varargin)
 
 % Edit the above text to modify the response to help seg_interface
 
-% Last Modified by GUIDE v2.5 20-Jan-2017 11:58:47
+% Last Modified by GUIDE v2.5 18-Dec-2018 15:07:44
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -95,7 +95,7 @@ popupmenu1_Callback(hObject, eventdata, handles);
 
 % --- Executes on button press in pushbutton_seg.
 function pushbutton_seg_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton_seg (see GCBO)
+% hObject    handle to pushbutton_save (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 global Image;
@@ -126,6 +126,15 @@ else
     Seg =grabcut.Segment(Image, mask,Seeds);
 end
 ui_update();
+
+% --- Executes on button press in pushbutton_save.
+function pushbutton_save_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton_save (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+global Seg;
+[filename, pathname] = uiputfile({'*.png';'*.jpg';'*.bmp'},'File Selector');
+imwrite(Seg*255,fullfile(pathname, filename));
 
 
 % --- Executes on selection change in popupmenu1.
