@@ -20,9 +20,11 @@ Wang, Guotai, et al. "Deepigeos: A deep interactive geodesic framework for medic
 3, run user_interface.m and load an image, start to segment!
 
 ![graphcut](./images/graph_cut_snapshot.png)
+
 A snapshot for GraphCut.
 
-![grabcut](./data/grab_cut_snapshot.png)
+![grabcut](./images/grab_cut_snapshot.png)
+
 A snapshot for GrabCut.
 
 # Reference
