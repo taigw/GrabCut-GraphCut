@@ -9,11 +9,11 @@ This repository uses the maxflow algorithm provided by http://vision.csd.uwo.ca/
 
 This implementation was developed for comparison with DeepIGeoS. If you use this repository, please cite the following paper:
 
-Wang, Guotai, et al. "Deepigeos: A deep interactive geodesic framework for medical image segmentation."  IEEE Transactions on Pattern Analysis and Machine Intelligence, 2018. https://ieeexplore.ieee.org/document/8370732
+Wang, Guotai, et al. "DeepIGeos: A deep interactive geodesic framework for medical image segmentation."  IEEE Transactions on Pattern Analysis and Machine Intelligence, vol 41(7), pp 1559 - 1572, 2019. https://ieeexplore.ieee.org/document/8370732
 
 # How to use:
 
-1, download the code
+1, download the code.
 
 2, go to the folder "Algorithms", run make.m to compile the maxflow algoithm.
 
